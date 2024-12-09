@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bulk Email Sender</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f7f7f7;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      input[type="file"],
+      input[type="email"],
+      input[type="submit"],
+      textarea,
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bulk Email Sender by Nool</h1>
+      <form action="/send_email" method="POST" enctype="multipart/form-data">
+        <label for="emails">Enter Email Addresses (comma separated):</label>
+        <input
+          type="text"
+          name="emails"
+          required
+          placeholder="example1@gmail.com, example2@gmail.com"
+        />
+
+        <label for="subject">Enter Subject:</label>
+        <input
+          type="text"
+          name="subject"
+          required
+          placeholder="Enter subject here..."
+        />
+
+        <label for="headline">Enter your Motivation Headline (h1):</label>
+        <input
+          type="text"
+          name="headline"
+          required
+          placeholder="Enter your motivation headline here..."
+        />
+
+        <label for="message">Enter your Motivational Message:</label>
+        <textarea
+          name="message"
+          rows="4"
+          required
+          placeholder="Enter your motivational message here..."
+        ></textarea>
+
+        <label for="image_file" required>Upload Image</label>
+        <input type="file" name="image_file" />
+
+        <input type="submit" value="Send Motivation" />
+      </form>
+    </div>
+  </body>
+</html>
